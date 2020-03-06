@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <title> Final Assesment</title>
+    <head>
+    </head> 
+<body>
+    <style>
+        .box1 {
+            height: 700px;
+            width: 500px;
+            border: 5px solid black;
+            float: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 100px;
+        }
+
+        .box2 {
+            height: 700px;
+            width: 500px;
+            border: 5px solid black;
+            float: right;
+
+        }
+
+        /* .box1 > div {
+           
+            align-items: center;
+            padding-top: 100px;
+    
+        } */
+
+        .content {
+            padding-top: 40px;
+        }
+
+
+        
+
+        
+
+
+    </style>
+    <container>
+        <div class="box1">
+            <input type="text" id="myInput">
+            <input name="MyColorPicker"
+            type="color"
+            id="ColorPicker1"/>
+        
+        <div class="content" >
+            <textarea name="message" id="Content"></textarea>
+            <input name="MyColorPicker"
+            type="color"
+            id="ColorPicker2"/>
+        </div>
+    </div>
+        <div class="box2">
+        <h1 id="output-title"></h1>
+        <p id="output-content"></p>
+    </div>
+        
+        
+    </container>
+</body>
+
+<script>
+
+    const titl = document.getElementById('myInput');
+    const cont = document.getElementById("Content");
+    const output1 = document.getElementById('output-title')
+    const output2 = document.getElementById("output-content")
+    const color1 = document.getElementById('ColorPicker1')
+    const color2 = document.getElementById('ColorPicker2')
+
+    console.log(cont)
+
+    titl.addEventListener('input', updateValue)
+    function updateValue(e) {
+        output1.innerHTML = e.target.value;
+    }
+
+    cont.addEventListener('input', updateValue2)
+
+    function updateValue2(e) {
+        console.log('--------')
+        console.log(e.target)
+        output2.innerHTML = e.target.value;
+    }
+   
+
+
+    color1.addEventListener('input', changeColor)
+
+    function changeColor(e) {
+        output1.style.color = e.target.value;
+    }
+
+    color2.addEventListener('input', changeColor1)
+
+    function changeColor1(e) {
+        console.log(e)
+        console.log(e.target)
+        console.log(e.target.value)
+        console.log(output2)
+
+        output2.style.color = e.target.value;
+    }
+</script>
